@@ -4,5 +4,5 @@ mainContainer.id = "mainContainer";
     const gridContainer = document.createElement('div');
     gridContainer.classList.add('gridContainer');
     mainContainer.appendChild(gridContainer);
-
+    
 document.body.appendChild(mainContainer);
