@@ -15,8 +15,17 @@ h1 {
 
 .gridContainer {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
     outline: 2px black solid;
     width: 600px;
     height: 600px;
+}
+
+.grid {
+    height: 40px;
+    width: 40px;
+    border: 1px black solid;
+    margin: 0;
+    padding: 0;
 }
