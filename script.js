@@ -4,7 +4,7 @@ mainContainer.id = "mainContainer";
     const gridContainer = document.createElement('div');
     gridContainer.classList.add('gridContainer');
 
-        for (i = 0; i < 40; i++) {
+        for (i = 0; i < 256; i++) {
             const grid = document.createElement('div');
             grid.classList.add('grid');
             gridContainer.appendChild(grid);
