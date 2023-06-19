@@ -1,19 +1,15 @@
-body {
-    background-color: white;
-}
-
-h1 {
+header {
     text-align: center;
-    font-size: 50px;
+    font-size: 32px;
 }
 
-#mainContainer {
+.main-body {
     display: flex;
     justify-content: center;
-    flex: auto;
+    align-items: center;
 }
 
-.gridContainer {
+.grid-container {
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);
@@ -22,14 +18,10 @@ h1 {
     height: 640px;
 }
 
-.grid {
-    height: 40px;
-    width: 40px;
-    outline: 1px black solid;
-    margin: 0;
-    padding: 0;
+.grids {
+    outline: 0.5px black solid;
 }
 
-.grid:hover{
-    background-color: rgb(0, 0, 0);
+.grids:hover {
+    background-color: black;
 }
