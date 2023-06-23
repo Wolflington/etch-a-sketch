@@ -28,11 +28,28 @@ header {
 }
 
 .slidercontainer {
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: flex-start; */
+    margin-right: 250px;
+    padding: 20px;
+    height: 600px;
+    width: 250px;
+    background-color: lightblue;
+}
+
+.text, .input {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    margin-right: 250px;
-    height: 600px;
-    width: 300px;
-    background-color: lightblue;
+}
+
+.modes {
+    margin-top: 15px;
+}
+
+.normal-mode,
+.rainbow-mode,
+.eraser,
+.clear {
+    margin-top: 15px;
 }
