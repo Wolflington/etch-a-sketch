@@ -1,8 +1,20 @@
 const gridContainer = document.querySelector('.grid-container');
-let gridSize = 16*16;
+const slider = document.querySelector('.slider');
+let output = document.querySelector('.grid-size');
+output.innerText = `Grid Size: ${slider.value} x ${slider.value}`;
+slider.oninput = () => getSliderValue();
+let gridSize;
+
+function getSliderValue () {
+    gridSize = slider.value;
+    output.innerText = `Grid Size: ${slider.value} x ${slider.value}`;
+    console.log(gridSize);
+}
 
 
 function createGrids() {
+    let gridSize = slider.value*slider.value;
+    console.log(gridSize);
     for (i = 0; i < gridSize; i++) {
         const grids = document.createElement('div');
         grids.classList.add('grids');
@@ -34,13 +46,4 @@ function drawGrids(e) {
         e.currentTarget.style.backgroundColor = 'black';
         console.log(e);
     }
-}
-
-const slider = document.querySelector('.slider');
-let output = document.querySelector('.grid-size');
-output.innerText = `Grid Size: ${slider.value} x ${slider.value}`;
-slider.oninput = () => getSliderValue();
-
-function getSliderValue () {
-    output.innerText = `Grid Size: ${slider.value} x ${slider.value}`;
 }
