@@ -43,8 +43,20 @@ header {
     justify-content: center;
 }
 
-.modes {
+.text {
+    margin-top: 25px;
+}
+
+.input {
     margin-top: 15px;
+}
+
+.modes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
 }
 
 .normal-mode,
@@ -52,4 +64,6 @@ header {
 .eraser,
 .clear {
     margin-top: 15px;
+    width: 100px;
+    height: 35px;
 }
