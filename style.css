@@ -5,6 +5,7 @@ header {
 
 .main-body {
     display: flex;
+    flex: auto;
     justify-content: center;
     align-items: center;
     margin-top: 75px;
@@ -12,8 +13,6 @@ header {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr);
     outline: 2px black solid;
     width: 600px;
     height: 600px;
@@ -38,12 +37,12 @@ header {
     background-color: lightblue;
 }
 
-.text, .input {
+.grid-size, .input {
     display: flex;
     justify-content: center;
 }
 
-.text {
+.grid-size {
     margin-top: 25px;
 }
 
