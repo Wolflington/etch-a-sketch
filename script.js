@@ -26,6 +26,15 @@ function createGrids(size) {
         grids.addEventListener('mouseup', disableDraw);
         grids.addEventListener('mouseover', drawGrids);
         gridContainer.appendChild(grids);
+
+        //Clears the drawing board
+        function clearGrid() {
+            const clearBtn = document.querySelector('.clear');
+            clearBtn.addEventListener('click', () => {
+                grids.style.backgroundColor = 'white';
+                })
+            }
+        clearGrid();
     }
 }
 createGrids(16);
@@ -47,3 +56,4 @@ function drawGrids(e) {
         console.log(e);
     }
 }
+
