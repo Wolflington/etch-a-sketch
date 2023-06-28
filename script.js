@@ -21,7 +21,8 @@ function createGrids(size) {
             parent.removeChild(parent.firstChild);
         }
     }
-    removeAllChild(gridContainer);
+    removeAllChild(gridContainer); //Removes excess grids when the value is changed according to user input
+
     gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     gridContainer.style.gridTemplateRows = `repeat(${size}, 1fr);`
     for (i = 0; i < size*size; i++) {
@@ -30,7 +31,7 @@ function createGrids(size) {
         grids.setAttribute('draggable', false);
         grids.addEventListener('mousedown', enableDraw);
         grids.addEventListener('mouseup', disableDraw);
-        grids.addEventListener('mouseover', drawGrids);
+        grids.addEventListener('mousemove', drawGrids);
         gridContainer.appendChild(grids);
 
         //Clears the drawing board
@@ -49,7 +50,6 @@ createGrids(16);
 let mouseDown = false;
 function enableDraw(e) {
     mouseDown = true;
-    e.currentTarget.style.backgroundColor = 'black';
 }
 
 function disableDraw() {
@@ -63,6 +63,13 @@ function drawGrids(e) {
     }
 }
 
-//Write a function that erases the grid once they are clicked and hovered
+//Write a function that calls other functions to activate different modes
+function setCurrentMode (mode) {
+    //function that activates modes
+    //function that calls current mode
+}
+
+
+
 
 
