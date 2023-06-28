@@ -70,16 +70,17 @@ function disableDraw(e) {
 }
 
 function drawGrids(e) {
-    if (e.type === 'mousedown') return
-    if (currentMode === 'normal') {
-        e.currentTarget.style.backgroundColor = 'black';
-    } else if (currentMode === 'rainbow') {
-        const red = Math.floor(Math.random() * 256);
-        const blue = Math.floor(Math.random() * 256);
-        const green = Math.floor(Math.random() * 256);
-        e.currentTarget.style.backgroundColor = `rgb(${red}, ${blue}, ${green})`;
-    } else if (currentMode === 'eraser') {
-        e.currentTarget.style.backgroundColor = 'white';
+    if (mouseDown) {
+        if (currentMode === 'normal') {
+            e.currentTarget.style.backgroundColor = 'black';
+        } else if (currentMode === 'rainbow') {
+            const red = Math.floor(Math.random() * 256);
+            const blue = Math.floor(Math.random() * 256);
+            const green = Math.floor(Math.random() * 256);
+            e.currentTarget.style.backgroundColor = `rgb(${red}, ${blue}, ${green})`;
+        } else if (currentMode === 'eraser') {
+            e.currentTarget.style.backgroundColor = 'white';
+        }
     }
 }
 
@@ -91,19 +92,11 @@ function setCurrentMode (mode) {
 
 function activateButtons (mode) {
     if (currentMode === 'normal') {
-        normalBtn.classList.remove('active');
+        normalBtn.classList.toggle('active');
     } else if (currentMode === 'rainbow') {
-        rainbowBtn.classList.remove('active');
+        rainbowBtn.classList.toggle('active');
     } else if (currentMode === 'eraser') {
-        eraserBtn.classList.remove('active');
-    }
-
-    if (mode === 'normal') {
-        normalBtn.classList.add('active');
-    } else if (mode === 'rainbow') {
-        rainbowBtn.classList.add('active');
-    } else if (mode === 'eraser') {
-        eraserBtn.classList.add('active');
+        eraserBtn.classList.toggle('active');
     }
 }
 
