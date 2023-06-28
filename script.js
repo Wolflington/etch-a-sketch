@@ -1,10 +1,23 @@
-//Default Values
+//Global variables
+const DEFAULT_MODE = 'normal';
+let currentMode = DEFAULT_MODE;
 
 const gridContainer = document.querySelector('.grid-container');
 const output = document.querySelector('.grid-size');
 const slider = document.querySelector('.slider');
-slider.oninput = () => getSliderValue();
 output.innerText = `Grid Size: ${slider.value} x ${slider.value}`;
+
+
+//Variables for buttons
+const normalBtn = document.querySelector('.normal-mode');
+const rainbowBtn = document.querySelector('.rainbow-mode');
+const eraserBtn = document.querySelector('.eraser');
+
+//Event listeners
+slider.oninput = () => getSliderValue();
+normalBtn.onclick = () => setCurrentMode('normal');
+rainbowBtn.onclick = () => setCurrentMode('rainbow');
+eraserBtn.onclick = () => setCurrentMode('eraser');
 
 //Create a function that gets the user input from the slider
 function getSliderValue() {
@@ -52,22 +65,48 @@ function enableDraw(e) {
     mouseDown = true;
 }
 
-function disableDraw() {
+function disableDraw(e) {
     mouseDown = false;
 }
 
 function drawGrids(e) {
-    if (mouseDown) {
+    if (e.type === 'mousedown') return
+    if (currentMode === 'normal') {
         e.currentTarget.style.backgroundColor = 'black';
-        console.log(e);
+    } else if (currentMode === 'rainbow') {
+        const red = Math.floor(Math.random() * 256);
+        const blue = Math.floor(Math.random() * 256);
+        const green = Math.floor(Math.random() * 256);
+        e.currentTarget.style.backgroundColor = `rgb(${red}, ${blue}, ${green})`;
+    } else if (currentMode === 'eraser') {
+        e.currentTarget.style.backgroundColor = 'white';
     }
 }
 
 //Write a function that calls other functions to activate different modes
 function setCurrentMode (mode) {
-    //function that activates modes
-    //function that calls current mode
+    activateButtons(mode)
+    currentMode = mode;
 }
+
+function activateButtons (mode) {
+    if (currentMode === 'normal') {
+        normalBtn.classList.remove('active');
+    } else if (currentMode === 'rainbow') {
+        rainbowBtn.classList.remove('active');
+    } else if (currentMode === 'eraser') {
+        eraserBtn.classList.remove('active');
+    }
+
+    if (mode === 'normal') {
+        normalBtn.classList.add('active');
+    } else if (mode === 'rainbow') {
+        rainbowBtn.classList.add('active');
+    } else if (mode === 'eraser') {
+        eraserBtn.classList.add('active');
+    }
+}
+
 
 
 
