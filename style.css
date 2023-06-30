@@ -1,6 +1,12 @@
+/* Dancing Font for Header */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+/* Oswald Font for container*/
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
 header {
     text-align: center;
-    font-size: 32px;
+    font-size: 38px;
+    font-family: 'Dancing Script', cursive;
 }
 
 .main-body {
@@ -22,18 +28,19 @@ header {
     border: thin black solid;
 }
 
-/* .grids:hover {
-    background-color: black;
-} */
-
 .slidercontainer {
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: flex-start; */
+    /* display: flex;
+    justify-content: flex-start;
+    flex-direction: column; */
     margin-right: 250px;
-    height: 600px;
+    height: 400px;
     width: 250px;
     background-color: lightblue;
+}
+
+.slidercontainer,
+button {
+    font-family: 'Oswald', sans-serif;
 }
 
 .grid-size, .input {
@@ -42,7 +49,7 @@ header {
 }
 
 .grid-size {
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 .input {
@@ -61,7 +68,7 @@ header {
 .rainbow-mode,
 .eraser,
 .clear {
-    margin-top: 15px;
+    margin-top: 20px;
     width: 100px;
     height: 35px;
 }
