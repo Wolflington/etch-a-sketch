@@ -75,7 +75,7 @@ function drawGrids(e) {
             const green = Math.floor(Math.random() * 256);
             e.currentTarget.style.backgroundColor = `rgb(${red}, ${blue}, ${green})`;
         } else if (currentMode === 'eraser') {
-            e.currentTarget.style.backgroundColor = 'white';
+            e.currentTarget.style.backgroundColor = '#e1dad2';
         }
     }
 }
