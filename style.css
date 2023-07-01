@@ -13,6 +13,11 @@ header {
     font-family: 'Dancing Script', cursive;
 }
 
+button {
+    background-color: #ae9789;
+    border: 1px solid;
+}
+
 .main-body {
     display: flex;
     flex: auto;
@@ -23,13 +28,13 @@ header {
 
 .grid-container {
     display: grid;
-    border: 5px solid #222c3c;
+    border: 5px solid #8f614b;
     width: 600px;
     height: 600px;
 }
 
 .grids {
-    border: thin solid #696969;
+    border: thin solid #b69b7d;
 }
 
 .slidercontainer {
