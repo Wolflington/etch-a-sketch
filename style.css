@@ -3,6 +3,10 @@
 /* Oswald Font for container*/
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
+body {
+    background-color: #e1dad2;
+}
+
 header {
     text-align: center;
     font-size: 38px;
@@ -14,28 +18,26 @@ header {
     flex: auto;
     justify-content: center;
     align-items: center;
-    margin-top: 75px;
+    margin-top: 50px;
 }
 
 .grid-container {
     display: grid;
-    border: 1px black solid;
+    border: 5px solid #222c3c;
     width: 600px;
     height: 600px;
 }
 
 .grids {
-    border: thin black solid;
+    border: thin solid #696969;
 }
 
 .slidercontainer {
-    /* display: flex;
-    justify-content: flex-start;
-    flex-direction: column; */
     margin-right: 250px;
     height: 400px;
     width: 250px;
     background-color: lightblue;
+    margin-bottom: 200px;
 }
 
 .slidercontainer,
