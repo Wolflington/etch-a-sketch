@@ -19,7 +19,6 @@ normalBtn.onclick = () => setCurrentMode('normal');
 rainbowBtn.onclick = () => setCurrentMode('rainbow');
 eraserBtn.onclick = () => setCurrentMode('eraser');
 
-//Create a function that gets the user input from the slider
 function getSliderValue() {
     let gridSize = slider.value;
     output.innerText = `Grid Size: ${slider.value} x ${slider.value}`;
@@ -27,14 +26,13 @@ function getSliderValue() {
     createGrids(gridSize);
 }
 
-// Use for loop to create the grids
 function createGrids(size) {
     function removeAllChild(parent) {
         while (parent.firstChild) {
             parent.removeChild(parent.firstChild);
         }
     }
-    removeAllChild(gridContainer); //Removes excess grids when the value is changed according to user input
+    removeAllChild(gridContainer);
 
     gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     gridContainer.style.gridTemplateRows = `repeat(${size}, 1fr);`
@@ -47,7 +45,6 @@ function createGrids(size) {
         grids.addEventListener('mousemove', drawGrids);
         gridContainer.appendChild(grids);
 
-        //Clears the drawing board
         function clearGrid() {
             const clearBtn = document.querySelector('.clear');
             clearBtn.addEventListener('click', () => {
@@ -59,7 +56,6 @@ function createGrids(size) {
 }
 createGrids(16);
 
-//Create a variable that "turns the switch on/off"  when the mouse button is clicked
 let mouseDown = false;
 function enableDraw(e) {
     mouseDown = true;
@@ -84,7 +80,6 @@ function drawGrids(e) {
     }
 }
 
-//Write a function that calls other functions to activate different modes
 function setCurrentMode (mode) {
     activateButtons(mode)
     currentMode = mode;
@@ -99,9 +94,3 @@ function activateButtons (mode) {
         eraserBtn.classList.toggle('active');
     }
 }
-
-
-
-
-
-
