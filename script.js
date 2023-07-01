@@ -48,7 +48,7 @@ function createGrids(size) {
         function clearGrid() {
             const clearBtn = document.querySelector('.clear');
             clearBtn.addEventListener('click', () => {
-                grids.style.backgroundColor = 'white';
+                grids.style.backgroundColor = '#e1dad2';
                 });
             }
         clearGrid();
